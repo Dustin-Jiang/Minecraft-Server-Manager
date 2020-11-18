@@ -3,5 +3,10 @@
     "1.12.2",
     "1.11.2",
     "1.8.10"
-  ]
+  ],
+  "launch_option" {
+    "silent": "true",
+    "max-ram": "512M",
+    "min-ram": "256M"
+  }
 }

@@ -15,16 +15,28 @@ class App:
       self.OSver = 'windows'
     else: 
       self.OSver = 'posix'
+      
     #Get WorkDir
     self.workDir = self.__command("pwd")
+    
     #Deal with config
-    self.configFile = open("./config.json", mode="r", encoding="utf8")
-    configs = self.configFile.readlines();
+    configFile = open("./config.json", mode="r", encoding="utf8")
+    configs = configFile.readlines()
     jsonStr = "";
     for i in configs:
       jsonStr += i;
-    configStr = json.loads(jsonStr);
-    print(configStr["version"][0])
+    configStr = json.loads(jsonStr)
+    self.version = configStr["version"][0]
+    self.launchOption = {}
+    if configStr["launch_option"]["silent"] = "true":
+      self.launchOption["silent"] = True
+    else:
+      self.launchOption["silent"] = False
+    self.launchOption["max-ram"] = configStr["launch_option"]["max-ram"]
+    self.launchOption["min-ram"] = configStr["launch_option"]["min-ram"]
+    configFile.close()
+    
+    return self
     
   #Function to Get stdout
   def __command(self, command):
