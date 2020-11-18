@@ -1,0 +1,8 @@
+{
+    "parent": "fake",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

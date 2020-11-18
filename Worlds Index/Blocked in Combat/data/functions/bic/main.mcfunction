@@ -1,0 +1,5 @@
+function bic:teams if @a[x=64,y=1,z=32,dx=31,dy=15,dz=31]
+function bic:countdown if @s[score_countdown_min=1,score_countdown=302]
+function bic:arenasetup if @s[score_countdown_min=0,score_countdown=0]
+function bic:game if @s[tag=play]
+function bic:settings if @a[x=80,y=2,z=83,dx=15,dy=2,dz=4]

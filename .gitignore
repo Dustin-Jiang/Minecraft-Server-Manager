@@ -1,0 +1,8 @@
+#ignore server java file
+server.jar
+
+#ignore logs
+/crash-reports/
+/logs/
+
+.DS_Store
