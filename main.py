@@ -1,5 +1,5 @@
 #!coding=utf8
-import os, sys
+import os, sys, json
 
 commands = {
   "pwd": {
@@ -20,8 +20,11 @@ class App:
     #Deal with config
     self.configFile = open("./config.json", mode="r", encoding="utf8")
     configs = self.configFile.readlines();
-    print(configs)
-    print(self.OSver)
+    jsonStr = "";
+    for i in configs:
+      jsonStr += i;
+    configStr = json.loads(jsonStr);
+    print(configStr["version"][0])
     
   #Function to Get stdout
   def __command(self, command):
