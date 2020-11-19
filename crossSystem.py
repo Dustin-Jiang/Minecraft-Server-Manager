@@ -34,3 +34,13 @@ class CrossSys:
       return pwd + commands["/"]["windows"] + filename
     else: 
       return pwd + commands["/"]["posix"] + filename
+      
+  #Read and load JSON
+  def readJSON(self, file):
+    context = file.readlines()
+    jsonStr = "";
+    for i in context:
+      jsonStr += i;
+    contextStr = json.loads(jsonStr)
+    file.close()
+    return contextStr
