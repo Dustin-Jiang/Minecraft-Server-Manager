@@ -4,6 +4,10 @@ commands = {
   "pwd": {
     "windows": "cd",
     "posix": "pwd"
+   },
+   "/": {
+    "windows": "\\",
+    "posix": "/"
    }
 }
 
@@ -24,3 +28,9 @@ class CrossSys:
     else:
       result = os.popen(commands[command][self.OSver])
     return result.read()
+    
+  def getFileLocation(self, pwd, filename):
+    if self.OSver == "windows":
+      return pwd + commands["/"]["windows"] + filename
+    else: 
+      return pwd + commands["/"]["posix"] + filename

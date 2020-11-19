@@ -7,10 +7,12 @@ class App:
     self.crossSys = crossSystem.CrossSys()
     #Get WorkDir
     self.workDir = self.crossSys.command("pwd")
-    print(self.workDir)
-    
+    self.workDir = self.workDir[0:-1]
+
     #Deal with config
-    configFile = open("./config.json", mode="r", encoding="utf8")
+    fileLocation = self.crossSys.getFileLocation(self.workDir, "config.json")
+    fileLocation = self.workDir + "\\" + "config.json"
+    configFile = open(fileLocation, mode="r", encoding="utf8")
     configs = configFile.readlines()
     jsonStr = "";
     for i in configs:
