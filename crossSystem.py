@@ -46,21 +46,8 @@ class CrossSys:
     return contextStr
    
 #Class for getchar() 
-class Getch:
-    def __init__(self):
-        try:
-            self.impl = _GetchWindows()
-        except ImportError:
-            self.impl = _GetchUnix()
-
-    def __call__(self): return self.impl()
-
-
-class __GetchUnix:
-    def __init__(self):
-        import tty, sys
-
-    def __call__(self):
+def Getch():
+    def _GetchUnix():
         import sys, tty, termios
         fd = sys.stdin.fileno()
         old_settings = termios.tcgetattr(fd)
@@ -70,12 +57,11 @@ class __GetchUnix:
         finally:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
         return ch
-
-
-class __GetchWindows:
-    def __init__(self):
-        import msvcrt
-
-    def __call__(self):
+    def _GetchWindows():
         import msvcrt
         return msvcrt.getch()
+    try:
+        impl = _GetchWindows()
+    except ImportError:
+        impl = _GetchUnix()
+    return impl
