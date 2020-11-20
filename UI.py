@@ -1,3 +1,5 @@
+import crossSystem
+
 class UIkit:
   def __init__(self, width, height):
     self.width = width
@@ -62,14 +64,15 @@ class UIkit:
 class Controlkit(UIkit):
   def __init__(self, obj):
     self.UIkit = obj
-    return
+    self.allChoices = []
   def radio(self, choices):
-    i = 1
+    i = len(self.allChoices)
     content = []
     for j in choices:
-      text = str(i) + ". "
-      content.append(text + j)
       i += 1
+      text = str(i) + ". "
+      self.allChoices.append(text + j)
+      
     UIkit.drawContentCenter(self.UIkit,content)
 
 if __name__ == "__main__":
