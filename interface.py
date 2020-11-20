@@ -3,6 +3,7 @@ import UI
 
 main = main.App()
 UIkit = UI.UIkit(width = os.get_terminal_size()[0] - 1, height = os.get_terminal_size()[1])
+Controlkit = UI.Controlkit(UIkit)
 
 class Window:
   def __init__(self):
@@ -13,22 +14,21 @@ class Window:
     UIkit.drawCenter("[Minecraft Server Manager]")
     UIkit.drawHR()
     UIkit.drawEnter()
+    
     UIkit.drawCenter("[Status]")
-    
-    #content = ["Selected: 1.12.2", "Running: True"]
-    #UIkit.drawContentCenter(content)
     UIkit.drawEnter()
-    UIkit.drawCenter("Version: 1.12.2")
-    UIkit.drawCenter("World: Server World")
+    content = ["Selected: 1.12.2", "Running: True"]
+    UIkit.drawContentCenter(content)
     
     UIkit.drawEnter()
     UIkit.drawEnter()
     
+    #content = ["1. Select server version", "2. Select world", "3. Change options"]
     UIkit.drawCenter("[Options]")
     UIkit.drawEnter()
-    UIkit.drawCenter("1. Select server version")
-    UIkit.drawCenter("2. Select world")
-    UIkit.drawCenter("3. Change options")
+    content = ["Select server version", "Select world", "Change options"]
+    Controlkit.radio(content)
+    #UIkit.drawContentCenter(content)
     
     UIkit.finish()
     

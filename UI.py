@@ -45,16 +45,34 @@ class UIkit:
         content += " "
       self.__drawFinish()
       print(content)
-   
+
   def drawEnter(self):
     print(" ")
     self.__drawFinish()
-    
+
   def __drawFinish(self):
     self.counter += 1
-    
+
   def finish(self):
     i = self.counter
     while i < self.height:
       self.drawEnter()
       i += 1
+      
+class Controlkit(UIkit):
+  def __init__(self, obj):
+    self.UIkit = obj
+    return
+  def radio(self, choices):
+    i = 1
+    content = []
+    for j in choices:
+      text = str(i) + ". "
+      content.append(text + j)
+      i += 1
+    UIkit.drawContentCenter(self.UIkit,content)
+
+if __name__ == "__main__":
+  UIkit = UIkit(80,24)
+  content = ["Hello", "World!!!"]
+  UIkit.drawContentCenter(content)
