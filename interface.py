@@ -2,7 +2,9 @@ import main, os
 import UI
 
 main = main.App()
-UIkit = UI.UIkit(width = os.get_terminal_size()[0] - 1, height = os.get_terminal_size()[1])
+width = os.get_terminal_size()[0] - 1
+height = os.get_terminal_size()[1]
+UIkit = UI.UIkit(width, height)
 
 class Window:
   def __init__(self):
@@ -27,7 +29,46 @@ class Window:
     content = ["Select server version", "Select world", "Change options"]
     UIkit.radio(content)
     
-    UIkit.drawChoices()   
+    choice = UIkit.drawChoices()
+    if choice == 1:
+      self.__changeVersion()
+    if choice == 2:
+      self.__changeWorld()
+    if choice == 3:
+      self.__changeOption()
+  
+  def __changeVersion(self):
+    UIkit.__init__(width, height)
+    UIkit.drawHR()
+    UIkit.drawCenter("[Minecraft Server Manager]")
+    UIkit.drawHR()
+    UIkit.drawEnter()
+
+    UIkit.drawCenter("[Change Server Version]")
+
+    UIkit.finish()
+
+  def __changeWorld(self):
+    UIkit.__init__(width, height)
+    UIkit.drawHR()
+    UIkit.drawCenter("[Minecraft Server Manager]")
+    UIkit.drawHR()
+    UIkit.drawEnter()
+
+    UIkit.drawCenter("[Change World]")
+
+    UIkit.finish()
+
+  def __changeOption(self):
+    UIkit.__init__(width, height)
+    UIkit.drawHR()
+    UIkit.drawCenter("[Minecraft Server Manager]")
+    UIkit.drawHR()
+    UIkit.drawEnter()
+
+    UIkit.drawCenter("[Change Options]")
+
+    UIkit.finish()
     
 if __name__ == "__main__":
   app = Window()

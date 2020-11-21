@@ -86,7 +86,7 @@ class UIkit(Drawkit):
   def drawChoices(self):
     self.drawContentCenter(self.allChoices)
     self.finish()
-    return self.__getKey(self.choiceRange)
+    return int(self.__getKey(self.choiceRange))
 
 if __name__ == "__main__":
   UIkit = UIkit(80,24)
