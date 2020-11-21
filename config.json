@@ -4,6 +4,7 @@
     "1.11.2",
     "1.8.10"
   ],
+  "selected_version": "1.12.2",
   "launch_option": {
     "silent": "true",
     "max-ram": "512M",

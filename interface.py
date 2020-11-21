@@ -20,7 +20,7 @@ class Window:
     
     UIkit.drawCenter("[Status]")
     UIkit.drawEnter()
-    content = ["Selected: 1.12.2", "Running: True"]
+    content = ["Selected: " + main.versionSelected, "Running: False"]
     UIkit.drawContentCenter(content)
     
     UIkit.drawEnter()
@@ -28,17 +28,22 @@ class Window:
 
     UIkit.drawCenter("[Options]")
     UIkit.drawEnter()
-    content = ["Select server version", "Select world", "Change options"]
+    content = ["Open/Close Server", "Select server version", "Select world", "Change options"]
     UIkit.radio(content)
     
     choice = UIkit.drawChoices()
     if choice == 1:
-      self.__changeVersion()
+      self.__switchServer()
     if choice == 2:
-      self.__changeWorld()
+      self.__changeVersion()
     if choice == 3:
+      self.__changeWorld()
+    if choice == 4:
       self.__changeOption()
   
+  def __switchServer(self):
+    main.__switchServer()
+
   def __changeVersion(self):
     UIkit = UI.UIkit(width, height)
 
@@ -48,12 +53,15 @@ class Window:
     UIkit.drawEnter()
 
     UIkit.drawCenter("[Change Server Version]")
+    UIkit.drawEnter()
 
-    UIkit.finish()
+    UIkit.radio(main.version)
+
+    UIkit.drawChoices()
 
   def __changeWorld(self):
     UIkit = UI.UIkit(width, height)
-    
+
     UIkit.drawHR()
     UIkit.drawCenter("[Minecraft Server Manager]")
     UIkit.drawHR()
@@ -65,7 +73,7 @@ class Window:
 
   def __changeOption(self):
     UIkit = UI.UIkit(width, height)
-    
+
     UIkit.drawHR()
     UIkit.drawCenter("[Minecraft Server Manager]")
     UIkit.drawHR()

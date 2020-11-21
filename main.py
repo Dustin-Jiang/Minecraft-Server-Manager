@@ -13,7 +13,8 @@ class App:
     fileLocation = self.crossSys.getFileLocation(self.workDir, "config.json")
     configFile = open(fileLocation, mode="r", encoding="utf8")
     configStr = self.crossSys.readJSON(configFile)
-    self.version = configStr["version"][0]
+    self.version = configStr["version"]
+    self.versionSelected = configStr["selected_version"]
     self.launchOption = {}
     if configStr["launch_option"]["silent"] == "true":
       self.launchOption["silent"] = True
@@ -21,7 +22,12 @@ class App:
       self.launchOption["silent"] = False
     self.launchOption["max-ram"] = configStr["launch_option"]["max-ram"]
     self.launchOption["min-ram"] = configStr["launch_option"]["min-ram"]
-    
+
+  def __switchServer(self):
+    version = self.versionSelected
+    path = self.crossSys.getFileLocation(version)
+    path = self.crossSys.getFileLocation("server.jar")
 
 if __name__ == "__main__": 
   app = App()
+  app.__switchServer()
