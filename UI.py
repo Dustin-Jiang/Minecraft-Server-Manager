@@ -65,15 +65,23 @@ class Controlkit(UIkit):
   def __init__(self, obj):
     self.UIkit = obj
     self.allChoices = []
+    self.choiceRange = []
   def radio(self, choices):
     i = len(self.allChoices)
-    content = []
     for j in choices:
       i += 1
       text = str(i) + ". "
+      self.choiceRange.append(i)
       self.allChoices.append(text + j)
-      
-    UIkit.drawContentCenter(self.UIkit,content)
+    UIkit.drawContentCenter(self.UIkit,self.allChoices)
+    return self.__getKey(self.choiceRange)
+    
+  def __getKey(self, range):
+    while True:
+      pressKey = crossSystem.Getch();
+      pressKey = pressKey.decode("ascii")
+      if int(pressKey) in range:
+        return pressKey
 
 if __name__ == "__main__":
   UIkit = UIkit(80,24)

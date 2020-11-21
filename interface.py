@@ -22,17 +22,13 @@ class Window:
     
     UIkit.drawEnter()
     UIkit.drawEnter()
-    
-    #content = ["1. Select server version", "2. Select world", "3. Change options"]
+
     UIkit.drawCenter("[Options]")
     UIkit.drawEnter()
     content = ["Select server version", "Select world", "Change options"]
     Controlkit.radio(content)
-    #UIkit.drawContentCenter(content)
     
-    UIkit.finish()
-    
-    
+    UIkit.finish()   
     
 if __name__ == "__main__":
   app = Window()
