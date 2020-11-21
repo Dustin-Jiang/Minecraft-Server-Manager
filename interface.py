@@ -11,6 +11,8 @@ class Window:
     self.__main()
 
   def __main(self):
+    UIkit = UI.UIkit(width, height)
+
     UIkit.drawHR()
     UIkit.drawCenter("[Minecraft Server Manager]")
     UIkit.drawHR()
@@ -38,7 +40,8 @@ class Window:
       self.__changeOption()
   
   def __changeVersion(self):
-    UIkit.__init__(width, height)
+    UIkit = UI.UIkit(width, height)
+
     UIkit.drawHR()
     UIkit.drawCenter("[Minecraft Server Manager]")
     UIkit.drawHR()
@@ -49,7 +52,8 @@ class Window:
     UIkit.finish()
 
   def __changeWorld(self):
-    UIkit.__init__(width, height)
+    UIkit = UI.UIkit(width, height)
+    
     UIkit.drawHR()
     UIkit.drawCenter("[Minecraft Server Manager]")
     UIkit.drawHR()
@@ -60,7 +64,8 @@ class Window:
     UIkit.finish()
 
   def __changeOption(self):
-    UIkit.__init__(width, height)
+    UIkit = UI.UIkit(width, height)
+    
     UIkit.drawHR()
     UIkit.drawCenter("[Minecraft Server Manager]")
     UIkit.drawHR()
