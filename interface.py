@@ -3,7 +3,6 @@ import UI
 
 main = main.App()
 UIkit = UI.UIkit(width = os.get_terminal_size()[0] - 1, height = os.get_terminal_size()[1])
-Controlkit = UI.Controlkit(UIkit)
 
 class Window:
   def __init__(self):
@@ -26,9 +25,9 @@ class Window:
     UIkit.drawCenter("[Options]")
     UIkit.drawEnter()
     content = ["Select server version", "Select world", "Change options"]
-    Controlkit.radio(content)
+    UIkit.radio(content)
     
-    UIkit.finish()   
+    UIkit.drawChoices()   
     
 if __name__ == "__main__":
   app = Window()

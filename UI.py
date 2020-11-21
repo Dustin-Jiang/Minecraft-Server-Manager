@@ -1,10 +1,11 @@
 import crossSystem
 
-class UIkit:
+class Drawkit:
   def __init__(self, width, height):
     self.width = width
     self.height = height
     self.counter = 0
+
   def drawHR(self):
     i = 0
     hr = ""
@@ -56,16 +57,17 @@ class UIkit:
     self.counter += 1
 
   def finish(self):
-    i = self.counter
+    i = self.counter + 1
     while i < self.height:
       self.drawEnter()
       i += 1
       
-class Controlkit(UIkit):
-  def __init__(self, obj):
-    self.UIkit = obj
+class UIkit(Drawkit):
+  def __init__(self, width, height):
     self.allChoices = []
     self.choiceRange = []
+    Drawkit.__init__(self,width, height)
+
   def radio(self, choices):
     i = len(self.allChoices)
     for j in choices:
@@ -73,8 +75,6 @@ class Controlkit(UIkit):
       text = str(i) + ". "
       self.choiceRange.append(i)
       self.allChoices.append(text + j)
-    UIkit.drawContentCenter(self.UIkit,self.allChoices)
-    return self.__getKey(self.choiceRange)
     
   def __getKey(self, range):
     while True:
@@ -82,6 +82,11 @@ class Controlkit(UIkit):
       pressKey = pressKey.decode("ascii")
       if int(pressKey) in range:
         return pressKey
+
+  def drawChoices(self):
+    self.drawContentCenter(self.allChoices)
+    self.finish()
+    return self.__getKey(self.choiceRange)
 
 if __name__ == "__main__":
   UIkit = UIkit(80,24)
