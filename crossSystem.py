@@ -4,11 +4,19 @@ commands = {
   "pwd": {
     "windows": "cd",
     "posix": "pwd"
-   },
-   "/": {
+  },
+  "/": {
     "windows": "\\",
     "posix": "/"
-   }
+  },
+  "runJava": {
+    "windows": "java.exe -jar",
+    "posix": "java -jar"
+  },
+  "cd": {
+    "windows": "cd",
+    "posix": "cd"
+  }
 }
 
 class CrossSys:
@@ -22,9 +30,12 @@ class CrossSys:
   #Function to Get stdout
   def command(self, command, *vartuple):
     if vartuple != "":
-      commandLine = " ";
-      commandLine.join(vartuple)
-      result = os.popen(commands[command][self.OSver] + " " + commandLine)
+      commandLine = "";
+      for i in vartuple:
+        commandLine += " "
+        commandLine += i
+      print(commands[command][self.OSver] + commandLine)
+      result = os.popen(commands[command][self.OSver] + commandLine)
     else:
       result = os.popen(commands[command][self.OSver])
     return result.read()
@@ -65,3 +76,7 @@ def Getch():
   except ImportError:
     impl = _GetchUnix()
   return impl
+  
+if __name__ == "__main__":
+  crossSys = CrossSys()
+  crossSys.command("runJava", r"C:\Users\Administrator\Programming\MCServerManager\1.12.2\server.jar","-Xmx=" + "512M", "-Xms="+"256M")
