@@ -23,11 +23,12 @@ class App:
     self.launchOption["max-ram"] = configStr["launch_option"]["max-ram"]
     self.launchOption["min-ram"] = configStr["launch_option"]["min-ram"]
 
-  def __switchServer(self):
+  def switchServer(self):
     version = self.versionSelected
-    path = self.crossSys.getFileLocation(version)
-    path = self.crossSys.getFileLocation("server.jar")
+    path = self.crossSys.getFileLocation(self.workDir, version)
+    path = self.crossSys.getFileLocation(self.workDir, "server.jar")
+    print(path)
 
 if __name__ == "__main__": 
   app = App()
-  app.__switchServer()
+  app.switchServer()

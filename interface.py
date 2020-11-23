@@ -32,6 +32,7 @@ class Window:
     UIkit.radio(content)
     
     choice = UIkit.drawChoices()
+    
     if choice == 1:
       self.__switchServer()
     if choice == 2:
@@ -42,7 +43,7 @@ class Window:
       self.__changeOption()
   
   def __switchServer(self):
-    main.__switchServer()
+    main.switchServer()
 
   def __changeVersion(self):
     UIkit = UI.UIkit(width, height)
