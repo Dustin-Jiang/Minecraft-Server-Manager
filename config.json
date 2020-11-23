@@ -9,5 +9,15 @@
     "silent": "true",
     "max-ram": "512M",
     "min-ram": "256M"
-  }
+  },
+  "world": [
+    {
+      "name": "Blocked in Combat", 
+      "version": "1.11.2"
+    }, 
+    {
+      "name": "Server World",
+      "version": "1.12.2"
+    }
+  ]
 }
