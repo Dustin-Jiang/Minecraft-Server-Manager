@@ -27,7 +27,6 @@ class App:
     version = self.versionSelected
     path = self.crossSys.getFileLocation(self.workDir, version)
     path = self.crossSys.getFileLocation(self.workDir, "server.jar")
-    print(path)
 
 if __name__ == "__main__": 
   app = App()
