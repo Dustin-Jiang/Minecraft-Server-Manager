@@ -80,8 +80,11 @@ class UIkit(Drawkit):
     while True:
       pressKey = crossSystem.Getch();
       pressKey = pressKey.decode("ascii")
-      if int(pressKey) in range:
-        return pressKey
+      try:
+        if int(pressKey) in range:
+          return pressKey
+      except ValueError:
+        continue
 
   def drawChoices(self):
     self.drawContentCenter(self.allChoices)
