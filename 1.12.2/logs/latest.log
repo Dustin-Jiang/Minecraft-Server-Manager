@@ -1,5 +1,29 @@
-[00:12:38] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2327ms behind, skipping 46 tick(s)
-[00:13:05] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2043ms behind, skipping 40 tick(s)
-[00:20:52] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2184ms behind, skipping 43 tick(s)
-[00:27:37] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2181ms behind, skipping 43 tick(s)
-[09:46:22] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2135ms behind, skipping 42 tick(s)
+[12:49:54] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[12:49:54] [Server thread/INFO]: Loading properties
+[12:49:54] [Server thread/INFO]: Default game type: SURVIVAL
+[12:49:54] [Server thread/INFO]: Generating keypair
+[12:49:55] [Server thread/INFO]: Starting Minecraft server on *:8002
+[12:49:55] [Server thread/INFO]: Using default channel type
+[12:49:56] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[12:49:56] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[12:49:56] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[12:49:56] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[12:49:56] [Server thread/INFO]: Preparing level "world"
+[12:49:57] [Server thread/INFO]: Loaded 488 advancements
+[12:49:58] [Server thread/INFO]: Preparing start region for level 0
+[12:50:00] [Server thread/INFO]: Preparing spawn area: 0%
+[12:50:01] [Server thread/INFO]: Preparing spawn area: 36%
+[12:50:02] [Server thread/INFO]: Preparing spawn area: 90%
+[12:50:02] [Server thread/INFO]: Done (5.737s)! For help, type "help" or "?"
+[12:50:17] [Server thread/INFO]: Unknown command. Try /help for a list of commands
+[12:50:46] [Server thread/INFO]: Unknown command. Try /help for a list of commands
+[12:50:54] [Server thread/INFO]: Unknown command. Try /help for a list of commands
+[12:51:00] [Server thread/INFO]: Stopping server
+[12:51:00] [Server thread/INFO]: Saving players
+[12:51:00] [Server thread/INFO]: Saving worlds
+[12:51:00] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[12:51:00] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[12:51:00] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[12:51:00] [Server Shutdown Thread/INFO]: Stopping server
+[12:51:00] [Server Shutdown Thread/INFO]: Saving players
+[12:51:00] [Server Shutdown Thread/INFO]: Saving worlds
