@@ -16,6 +16,10 @@ commands = {
   "cd": {
     "windows": "cd",
     "posix": "cd"
+  },
+  "seperator": {
+    "windows": " && ",
+    "posix": "; "
   }
 }
 
@@ -34,10 +38,17 @@ class CrossSys:
       for i in vartuple:
         commandLine += " "
         commandLine += i
+      print(commands[command][self.OSver] + commandLine)
       result = os.popen(commands[command][self.OSver] + commandLine)
     else:
       result = os.popen(commands[command][self.OSver])
     return result.read()
+    
+  def getCommand(self, command):
+    return commands[command][self.OSver]
+    
+  def rawCommand(self, command):
+    return os.popen(command)
     
   def getFileLocation(self, pwd, filename):
     if self.OSver == "windows":

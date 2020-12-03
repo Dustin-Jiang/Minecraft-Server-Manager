@@ -8,3 +8,5 @@ server.jar
 .DS_Store
 __pycache__/
 .vscode/
+*.log.gz
+logs/

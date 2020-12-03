@@ -26,7 +26,16 @@ class App:
   def switchServer(self):
     version = self.versionSelected
     path = self.crossSys.getFileLocation(self.workDir, version)
-    path = self.crossSys.getFileLocation(self.workDir, "server.jar")
+    command = self.crossSys.getCommand("cd") + " " + "\"" + path + "\"" +  self.crossSys.getCommand("seperator")
+    
+    path = "\"" + path + self.crossSys.getCommand("/") + "server.jar" + "\""
+    command += self.crossSys.getCommand("runJava") + " " + path
+    
+    command += " " + "-Xmx " + self.launchOption["max-ram"]
+    command += " " + "-Xms " + self.launchOption["min-ram"]
+    if self.launchOption["silent"] == True:
+      command +=  " " + "-nogui"
+    self.crossSys.rawCommand(command)
 
 if __name__ == "__main__": 
   app = App()
