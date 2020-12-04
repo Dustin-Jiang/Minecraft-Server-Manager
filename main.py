@@ -1,6 +1,6 @@
 #!coding=utf8
 import os, sys, json
-import crossSystem
+import crossSystem, server
 
 class App:
   def __init__(self):
@@ -35,7 +35,8 @@ class App:
     command += " " + "-Xms " + self.launchOption["min-ram"]
     if self.launchOption["silent"] == True:
       command +=  " " + "-nogui"
-    self.crossSys.rawCommand(command)
+      
+    self.server = server.Server(command)
 
 if __name__ == "__main__": 
   app = App()
