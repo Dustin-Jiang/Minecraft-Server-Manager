@@ -38,7 +38,7 @@ class CrossSys:
       for i in vartuple:
         commandLine += " "
         commandLine += i
-      print(commands[command][self.OSver] + commandLine)
+      #print(commands[command][self.OSver] + commandLine)
       result = os.popen(commands[command][self.OSver] + commandLine)
     else:
       result = os.popen(commands[command][self.OSver])
