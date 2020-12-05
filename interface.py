@@ -62,6 +62,8 @@ class Window:
 
     UIkit.drawChoices()
 
+    self.__main()
+
   def __changeWorld(self):
     UIkit = UI.UIkit(width, height)
 
@@ -74,6 +76,8 @@ class Window:
 
     UIkit.finish()
 
+    self.__main()
+
   def __changeOption(self):
     UIkit = UI.UIkit(width, height)
 
@@ -85,6 +89,8 @@ class Window:
     UIkit.drawCenter("[Change Options]")
 
     UIkit.finish()
+
+    self.__main()
     
 if __name__ == "__main__":
   app = Window()
