@@ -22,7 +22,7 @@ commands = {
     "posix": "; "
   },
   "newConsole": {
-    "windows": "start cmd /C \"",
+    "windows": "start cmd /K \"",
     "posix": "gnome-terminal -x bash -c \""
   }
 }
