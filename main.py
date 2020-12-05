@@ -36,7 +36,8 @@ class App:
     if self.launchOption["silent"] == True:
       command +=  " " + "-nogui"
       
-    self.server = server.Server(command)
+    self.server = server.Server()
+    self.server.run(command)
 
 if __name__ == "__main__": 
   app = App()
