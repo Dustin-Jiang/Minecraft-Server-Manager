@@ -29,7 +29,7 @@ class Window:
 
     UIkit.drawCenter("[Options]")
     UIkit.drawEnter()
-    content = ["Open/Close Server", "Select server version", "Select world", "Change options"]
+    content = ["Open/Close Server", "Select server version", "Select world", "Change options", "Quit"]
     UIkit.radio(content)
     
     choice = UIkit.drawChoices()
@@ -42,6 +42,8 @@ class Window:
       self.__changeWorld()
     if choice == 4:
       self.__changeOption()
+    if choice == 5:
+      return
   
   def __switchServer(self):
     main.switchServer()
