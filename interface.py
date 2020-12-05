@@ -1,7 +1,8 @@
 import main, os
-import UI
+import UI, server
 
 main = main.App()
+server = server.Server()
 width = os.get_terminal_size()[0] - 1
 height = os.get_terminal_size()[1]
 UIkit = UI.UIkit(width, height)
@@ -20,7 +21,7 @@ class Window:
     
     UIkit.drawCenter("[Status]")
     UIkit.drawEnter()
-    content = ["Selected: " + main.versionSelected, "Running: False"]
+    content = ["Selected: " + main.versionSelected, "Running: " + str(server.running)]
     UIkit.drawContentCenter(content)
     
     UIkit.drawEnter()
