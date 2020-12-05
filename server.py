@@ -18,6 +18,7 @@ class Server:
   def openServer(self):
     print(self.command)
     self.crossSys.rawCommand(self.command)
+    self.running = True
   
   def closeServer(self):
     print(self.command)

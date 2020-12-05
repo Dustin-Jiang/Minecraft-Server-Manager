@@ -45,6 +45,7 @@ class Window:
   
   def __switchServer(self):
     main.switchServer()
+    self.__main()
 
   def __changeVersion(self):
     UIkit = UI.UIkit(width, height)
