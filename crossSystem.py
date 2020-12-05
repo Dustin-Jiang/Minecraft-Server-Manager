@@ -20,6 +20,10 @@ commands = {
   "seperator": {
     "windows": " && ",
     "posix": "; "
+  },
+  "newConsole": {
+    "windows": "start cmd /C \"",
+    "posix": "gnome-terminal -x bash -c \""
   }
 }
 
@@ -48,7 +52,7 @@ class CrossSys:
     return commands[command][self.OSver]
     
   def rawCommand(self, command):
-    return os.popen(command)
+    return os.popen(commands["newConsole"][self.OSver] + command + "\"")
     
   def getFileLocation(self, pwd, filename):
     if self.OSver == "windows":
