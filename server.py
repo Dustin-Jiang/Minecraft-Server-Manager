@@ -9,20 +9,20 @@ class Server:
   def run(self, command):
     self.command = command
     if self.running:
-      proc = threading.Thread(target=self.closeServer)
+      closeServer(proc)
+    else:
+      proc = threading.Thread(target=self.openServer)
       proc.start()
       proc.join()
-    else:
-      self.openServer()
+      #self.openServer()
     
   def openServer(self):
-    print(self.command)
-    self.crossSys.rawCommand(self.command)
     self.running = True
+    self.crossSys.rawCommand(self.command)
   
-  def closeServer(self):
+  def closeServer(self, proc):
     print(self.command)
     
 if __name__ == "__main__":
   server = Server()
-  server.run("cd")
+  server.run("pause")
